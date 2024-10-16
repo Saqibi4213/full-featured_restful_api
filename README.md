@@ -1,59 +1,70 @@
-# restful-api-database-integration 📟
+# Full-Featured RESTful API 🚀🚀
 
-## Overview 🎬
-This project is a Node.js API built using Express and MongoDB. The API allows you to perform CRUD operations (Create, Read, Update, Delete) on a user collection stored in a MongoDB database. The API interacts with a Mongoose model to manage user data, including fields such as name, age, phone number, and image.
+## Description
+This project is a RESTful API built using Node.js, Express.js, and MongoDB. It allows you to perform CRUD (Create, Read, Update, Delete) operations on a collection of books. The API is designed to be efficient and secure, providing a solid foundation for any book management application.
 
-## Features 🎯
-- **Create User**: Add a new user to the database.
-- **Read Users**: Fetch a list of all users or retrieve a specific user by ID.
-- **Update User**: Modify user information.
-- **Delete User**: Remove a user from the database.
+## Features
+- **Fetch all books**: Retrieve a list of all books in the database.
+- **Fetch a single book**: Get details of a specific book by its ID.
+- **Create a new book**: Add a new book to the database.
+- **Update a book**: Modify details of an existing book.
+- **Delete a book**: Remove a book from the database.
 
-## Technologies 📢
-- **Node.js**: A JavaScript runtime for building server-side applications.
-- **Express**: A fast and minimalist web framework for Node.js.
-- **MongoDB**: A NoSQL database used to store the user data.
-- **Mongoose**: An Object Data Modeling (ODM) library for MongoDB and Node.js.
+## Technologies Used
+- Node.js
+- Express.js
+- MongoDB
+- Mongoose
+- dotenv
+- morgan
+- helmet
+- cors
 
-## DEMO 📺
-Deployment Link
+## DEPLOYMENT LINK :  [here]()
 
-## Installation and Setup 🔌
-### Clone the repository:
-```bash
-git clone https://github.com/Saqibi4213/restful-api-with-db-integration.git
+## Installation
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/Saqibi4213/full-featured_restful_api.git
+   cd full-featured_restful_api  
+
+
+## Copy code
+-npm start
+The server will run at http://localhost:5000.
+
+#API Endpoints
+- GET /api/books: Retrieve all books.
+- GET /api/books/
+- Retrieve a book by ID.
+- POST /api/books: Create a new book.
+- PUT /api/books/
+- Update an existing book by ID.
+- DELETE /api/books/
+- Delete a book by ID.
+
+
+# Testing with Postman
+You can use Postman to test the API endpoints. Ensure the server is running before making requests.
+
+1: GET All Books: Make a GET request to http://localhost:5000/api/books.
+<br>
+2: GET a Book: Make a GET request to http://localhost:5000/api/books/{id} (replace {id} with the book ID).
+<br>
+3: Create a New Book: Make a POST request to http://localhost:5000/api/books with a JSON body:
+<br>
+
 ```
-
-Copy code
-npm start
-The server will run at http://localhost:3000.
-
-API Endpoints
-1. Get all users
-Endpoint: /users
-Method: GET
-Description: Fetches all users from the database.
-curl http://localhost:3000/users
-2. Get a user by ID 👧
-Endpoint: /users/:id
-Method: GET
-Description: Fetches a user by their ID.
-curl http://localhost:3000/users/{id}
-3. Create a new user 👨‍🦰
-Endpoint: /users
-Method: POST
-Description: Creates a new user with the provided data.
-curl -X POST http://localhost:3000/users -H "Content-Type: application/json" -d '{"name":"John Doe", "age":25, "phoneNo":123456789}'
-4. Update a user by ID 🤦‍♂️
-Endpoint: /users/:id
-Method: PUT
-Description: Updates an existing user's data.
-curl -X PUT http://localhost:3000/users/{id} -H "Content-Type: application/json" -d '{"name":"Jane Doe", "age":30}'
-5. Delete a user by ID 🧨
-Endpoint: /users/:id
-Method: DELETE
-Description: Deletes a user from the database by their ID.
-curl -X DELETE http://localhost:3000/users/{id}
+{
+  "title": "Book Title",
+  "author": "Author Name",
+  "publishedYear": 2023,
+  "genre": "Fiction"
+}
+```
+4: Update a Book: Make a PUT request to http://localhost:5000/api/books/{id} with a JSON body to update the book.
+<br>
+5: Delete a Book: Make a DELETE request to http://localhost:5000/api/books/{id}.
 
 
 ## Author
