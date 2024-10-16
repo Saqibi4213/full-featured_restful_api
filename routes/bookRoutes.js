@@ -57,6 +57,7 @@ router.delete('/:id', async (req, res) => {
     }
 
     return res.status(204).json({ message: 'Book deleted' });
+  } catch (error) {
     return res.status(500).json({ message: error.message });
   }
 });
