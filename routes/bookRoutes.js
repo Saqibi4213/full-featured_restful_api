@@ -2,16 +2,14 @@ const express = require('express');
 const Book = require('../models/bookModel');
 const router = express.Router();
 
-// Fetch all books
 router.get('/', async (req, res) => {
   const books = await Book.find();
   res.json(books);
 });
 
-// Fetch a single book by ID
 router.get('/:id', async (req, res) => {
   try {
-    const bookId = req.params.id.trim();  // Trim the ID
+    const bookId = req.params.id.trim();
     const book = await Book.findById(bookId);
 
     if (!book) {
@@ -24,7 +22,6 @@ router.get('/:id', async (req, res) => {
   }
 });
 
-// Create a new book
 router.post('/', async (req, res) => {
   try {
     const newBook = await Book.create(req.body);
@@ -34,10 +31,9 @@ router.post('/', async (req, res) => {
   }
 });
 
-// Update a book by ID
 router.put('/:id', async (req, res) => {
   try {
-    const bookId = req.params.id.trim();  // Trim the ID
+    const bookId = req.params.id.trim();
     const updatedBook = await Book.findByIdAndUpdate(bookId, req.body, { new: true });
 
     if (!updatedBook) {
@@ -53,7 +49,7 @@ router.put('/:id', async (req, res) => {
 // Delete a book by ID
 router.delete('/:id', async (req, res) => {
   try {
-    const bookId = req.params.id.trim();  // Trim the ID
+    const bookId = req.params.id.trim();
     const deletedBook = await Book.findByIdAndDelete(bookId);
 
     if (!deletedBook) {
