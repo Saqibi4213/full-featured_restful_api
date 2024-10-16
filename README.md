@@ -20,7 +20,7 @@ This project is a RESTful API built using Node.js, Express.js, and MongoDB. It a
 - helmet
 - cors
 
-## DEPLOYMENT LINK :  [here]()
+## DEPLOYMENT LINK :  [here](https://full-featured-restful-1n7ls5vne-saqibi4213s-projects.vercel.app)
 
 ## Installation
 1. Clone the repository:

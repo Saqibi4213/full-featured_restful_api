@@ -1,0 +1,65 @@
+[
+    {
+        "_id": "670fb7bb3e01b6c58309d1a0",
+        "title": "The Great Gatsby",
+        "author": "F. Scott Fitzgerald",
+        "publishedYear": 1925,
+        "genre": "Fiction",
+        "rating": 4.5,
+        "__v": 0
+    }
+]
+
+GET All Books:
+
+Method: GET
+URL: http://localhost:5000/api/books
+No need for headers or body.
+Click Send.
+GET a Book by ID:
+
+Method: GET
+URL: http://localhost:5000/api/books/<bookId> (replace <bookId> with an actual ID)
+Click Send.
+POST a New Book:
+
+Method: POST
+URL: http://localhost:5000/api/books
+Headers:
+Key: Content-Type
+Value: application/json
+Body: (Select raw and choose JSON from the dropdown)
+json
+Copy code
+{
+  "title": "The Great Gatsby",
+  "author": "F. Scott Fitzgerald",
+  "publishedYear": 1925,
+  "genre": "Fiction",
+  "rating": 4.5
+}
+Click Send.
+PUT to Update a Book:
+
+Method: PUT
+URL: http://localhost:5000/api/books/<bookId> (replace <bookId> with the actual ID)
+Headers:
+Key: Content-Type
+Value: application/json
+Body: (Select raw and choose JSON from the dropdown)
+json
+Copy code
+{
+  "title": "The Great Gatsby - Updated",
+  "author": "F. Scott Fitzgerald",
+  "publishedYear": 1925,
+  "genre": "Fiction",
+  "rating": 4.7
+}
+Click Send.
+DELETE a Book:
+
+Method: DELETE
+URL: http://localhost:5000/api/books/<bookId> (replace <bookId> with the actual ID)
+No need for headers or body.
+Click Send.
