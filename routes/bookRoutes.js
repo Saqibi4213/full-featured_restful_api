@@ -1,5 +1,6 @@
 const express = require('express');
 const Book = require('../models/bookModel');
+
 const router = express.Router();
 
 router.get('/', async (req, res) => {
@@ -16,18 +17,18 @@ router.get('/:id', async (req, res) => {
       return res.status(404).json({ message: 'Book not found' });
     }
 
-    res.json(book);
+    return res.json(book);
   } catch (error) {
-    res.status(500).json({ message: error.message });
+    return res.status(500).json({ message: error.message });
   }
 });
 
 router.post('/', async (req, res) => {
   try {
     const newBook = await Book.create(req.body);
-    res.status(201).json(newBook);
+    return res.status(201).json(newBook);
   } catch (error) {
-    res.status(400).json({ message: error.message });
+    return res.status(400).json({ message: error.message });
   }
 });
 
@@ -40,13 +41,12 @@ router.put('/:id', async (req, res) => {
       return res.status(404).json({ message: 'Book not found' });
     }
 
-    res.json(updatedBook);
+    return res.json(updatedBook);
   } catch (error) {
-    res.status(500).json({ message: error.message });
+    return res.status(500).json({ message: error.message });
   }
 });
 
-// Delete a book by ID
 router.delete('/:id', async (req, res) => {
   try {
     const bookId = req.params.id.trim();
@@ -56,9 +56,8 @@ router.delete('/:id', async (req, res) => {
       return res.status(404).json({ message: 'Book not found' });
     }
 
-    res.status(204).json({ message: 'Book deleted' });
-  } catch (error) {
-    res.status(500).json({ message: error.message });
+    return res.status(204).json({ message: 'Book deleted' });
+    return res.status(500).json({ message: error.message });
   }
 });
 
